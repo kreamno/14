@@ -24,9 +24,28 @@ linknd_t* create_node(int value){
 	//정수값 저장 
 	ndPtr->data = value;
 	ndPtr->next = NULL;
-	
 
 	return ndPtr; 
 
 } 
 
+
+void addTail(int value){
+	linknd_t *ndPtr, *newPtr;
+	
+	if(list == NULL)	//첫 node이면 
+	{
+		return;
+	}
+	else
+	{
+		ndPtr = list;
+		while(ndPtr->next != NULL){
+			ndPtr = ndPtr->next;
+		}
+		
+		newPtr = create_node(value);
+		ndPtr->next = newPtr;
+	}
+	
+}
